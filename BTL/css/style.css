@@ -1,0 +1,197 @@
+:root {
+    --blackblue: #0c031a;
+    --white: #ffffff;
+    --blueviolet: #2a144d;
+    --violet: #4f327c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: var(--blackblue);
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.search:hover,
+.search:hover .search-btn,
+ul.v-user > li > a:hover,
+.setting-user > div:hover > button {
+    background-color: var(--violet);
+}
+
+/*Start header */
+header {
+    border-bottom: 2px solid var(--blueviolet);
+}
+
+.header {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 5rem;
+    margin: 0 4rem;
+}
+
+.fa-solid {
+    color: var(--white);
+}
+
+.btn {
+    background-color: var(--blueviolet);
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+/* Start search */
+.search {
+    border-radius: 20rem;
+    background-color: var(--blueviolet);
+}
+
+.search-text {
+    color: var(--white);
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+    width: 0;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+.search-text::placeholder {
+    color: var(--white);
+}
+
+.search:hover {
+    box-shadow: 0px 3px 8px var(--violet);
+}
+
+.search:hover .search-text {
+    width: 30rem;
+}
+
+.btn > i {
+    background-color: transparent;
+}
+/* End Search */
+
+/*Start setting user */
+.setting-user > div {
+    margin-right: 2rem;
+}
+
+.v-user {
+    display: none !important;
+    position: absolute;
+    box-shadow: 0px 3px 8px var(--blueviolet);
+}
+
+ul.v-user {
+    right: 0;
+    top: 4.5rem;
+    border-radius: 13px;
+}
+
+ul.v-user:after {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--blueviolet) transparent;
+    position: absolute;
+    top: -19px;
+    right: 25%;
+}
+
+ul.v-user > li {
+    list-style-type: none;
+    border-bottom: 1px solid var(--blackblue);
+    background: transparent;
+}
+
+ul.v-user > li:last-child {
+    border-bottom: none;
+}
+
+ul.v-user > li > a {
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+    padding: 1.2rem 2.2rem;
+    background-color: var(--blueviolet);
+    font-size: 1.2rem;
+}
+
+ul.v-user > li:first-child > a {
+    border-radius: 0.8rem 0.8rem 0 0;
+}
+
+ul.v-user > li:last-child > a {
+    border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.user:hover .v-user {
+    display: block !important;
+}
+/* End setting user */
+ul.header > li {
+    list-style-type: none;
+}
+/* End Header */
+
+
+/* Start Main */
+.right {
+    width: 85%;
+}
+/* Start nav*/
+.left {
+    width: 15%;
+    border-right: 2px solid var(--blueviolet);
+}
+
+.btn-new {
+    border: none;
+    cursor: pointer;
+}
+
+.btn-new > i {
+    background-color: transparent;
+}
+
+.nav {
+    align-items: center;
+}
+
+ul.menu {
+
+}
+
+ul.menu > li {
+    background-color: #ffffff;
+}
+
+ul.menu > li > a {
+    text-decoration: none;
+    display: block;
+    padding: 1.2rem;
+    color: var(--white);
+}
+
+ul.menu > li > button {
+    display: block;
+}
+
+ul.menu > li:hover a,
+ul.menu > li:hover button {
+    background-color: var(--violet);
+}
+/* End Main */
