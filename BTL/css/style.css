@@ -1,6 +1,7 @@
 :root {
     --blackblue: #0c031a;
-    --white: #ffffff;
+    --whitenew: #ffffff;
+    --white: #d5cece;
     --blueviolet: #2a144d;
     --violet: #4f327c;
 }
@@ -8,9 +9,12 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: var(--blackblue);
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--blackblue);
 }
 
 .flex {
@@ -20,8 +24,15 @@
 .search:hover,
 .search:hover .search-btn,
 ul.v-user > li > a:hover,
-.setting-user > div:hover > button {
+.setting-user > div:hover > button,
+ul.menu > li:hover,
+ul.menu > li:hover > a,
+ul.menu > li:hover > button {
     background-color: var(--violet);
+    text-shadow: 3px 3px 5px var(--blackblue);
+    color: var(--whitenew);
+    transition: 0.25s;
+    transition: color 0.35s;
 }
 
 /*Start header */
@@ -99,6 +110,7 @@ ul.v-user {
     right: 0;
     top: 4.5rem;
     border-radius: 13px;
+    z-index: 99;
 }
 
 ul.v-user:after {
@@ -161,6 +173,7 @@ ul.header > li {
 .btn-new {
     border: none;
     cursor: pointer;
+    background-color: var(--blackblue);
 }
 
 .btn-new > i {
@@ -171,14 +184,6 @@ ul.header > li {
     align-items: center;
 }
 
-ul.menu {
-
-}
-
-ul.menu > li {
-    background-color: #ffffff;
-}
-
 ul.menu > li > a {
     text-decoration: none;
     display: block;
@@ -187,11 +192,45 @@ ul.menu > li > a {
 }
 
 ul.menu > li > button {
+    padding-left: 2rem;
     display: block;
+}  
+
+/* End Main */
+.slider {
+    position: relative;
+    height: 18rem;
 }
 
-ul.menu > li:hover a,
-ul.menu > li:hover button {
-    background-color: var(--violet);
+.item {
+    position: absolute;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    padding: 20px;
 }
-/* End Main */
+
+.item > img {
+    width: 10rem;
+    border-radius: 1rem;
+}
+
+#next, #prev {
+    position: absolute;
+    top: 40%;
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    font-size: xx-large;
+    font-family: monospace;
+    font-weight: bold;
+    left: 50px;
+}
+
+#next:hover, #prev:hover {
+    color: var(--whitenew);
+}
+
+#next {
+    left: unset;
+    right: 50px;
+}
