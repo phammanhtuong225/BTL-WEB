@@ -101,10 +101,11 @@ header {
 }
 
 .v-user {
-    display: none !important;
+    display: none;
     position: absolute;
     box-shadow: 0px 3px 8px var(--blueviolet);
 }
+
 
 ul.v-user {
     right: 0;
@@ -150,9 +151,6 @@ ul.v-user > li:last-child > a {
     border-radius: 0 0 0.8rem 0.8rem;
 }
 
-.user:hover .v-user {
-    display: block !important;
-}
 /* End setting user */
 ul.header > li {
     list-style-type: none;
@@ -176,10 +174,6 @@ ul.header > li {
     background-color: var(--blackblue);
 }
 
-.btn-new > i {
-    background-color: transparent;
-}
-
 .nav {
     align-items: center;
 }
@@ -192,8 +186,9 @@ ul.menu > li > a {
 }
 
 ul.menu > li > button {
-    padding-left: 2rem;
+    margin-left: 2rem;
     display: block;
+    background-color: transparent;
 }  
 
 /* End Main */
@@ -205,12 +200,12 @@ ul.menu > li > button {
 .item {
     position: absolute;
     transition: 0.5s;
-    left: calc(50% - 110px);
+    left: calc(50% - 200px);
     padding: 20px;
 }
 
 .item > img {
-    width: 10rem;
+    width: 20rem;
     border-radius: 1rem;
 }
 

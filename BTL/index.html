@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js">
 </head>
 <body>
     <header>
@@ -16,61 +17,65 @@
                 <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
             </form>
             <form class="flex header setting-user">
-                <div><button class="btn"><i class="fa-solid fa-bell"></i></button></div>
-                <div><button class="btn"><i class="fa-solid fa-gear"></i></button></div>
+                <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div>
+                <div><button type="button" class="btn"><i class="fa-solid fa-gear"></i></button></div>
                 <div class="user">
-                    <button class="btn"><i class="fa-solid fa-user"></i></button>
-                    <ul class="v-user">
-                        <li><a href="#1">Đăng kí</a></li>
-                        <li><a href="#2">Đăng nhập</a></li>
+                    <button type="button" id="btn-user" class="btn"><i class="fa-solid fa-user"></i></button>
+                    <ul id="v-user" class="v-user">
+                        <li><a href="">Đăng kí</a></li>
+                        <li><a href="">Đăng nhập</a></li>
                     </ul>
                 </div>
             </form>
         </div>
+        <script>
+            
+        </script>
     </header>
     <main class="flex">
         <section class="left">
             <ul class="menu">
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-music"></i></button>
-                    <a href="#">Khám phá</a>
+                    <a href="">Khám phá</a>
                 </li>
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-house"></i></button>
-                    <a href="#">Cá nhân</a>
+                    <a href="">Cá nhân</a>
                 </li>
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-chart-simple"></i></button>
-                    <a href="#">Bảng xếp hạng</a>
+                    <a href="">Bảng xếp hạng</a>
                 </li>
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-barcode"></i></button>
-                    <a href="#">Chủ đề</a>
+                    <a href="">Chủ đề</a>
                 </li>
             </ul>
         </section>
         <section class="right">
             <div class="slider">
                 <div class="item">
-                    <img src="./assests/img/Screenshot 2023-07-30 230554.png" alt=""> 
+                    <img src="./assests/img/Screenshot 2023-07-31 195237.png" alt=""> 
                 </div>
                 <div class="item">
-                    <img src="./assests/img/Screenshot 2023-07-30 230621.png" alt=""> 
+                    <img src="./assests/img/Screenshot 2023-07-31 195237.png" alt=""> 
                 </div>
                 <div class="item">
-                    <img src="./assests/img/Screenshot 2023-07-30 230639.png" alt=""> 
+                    <img src="./assests/img/Screenshot 2023-07-31 195237.png" alt=""> 
                 </div>
                 <div class="item">
-                    <img src="./assests/img/Screenshot 2023-07-30 230657.png" alt=""> 
+                    <img src="./assests/img/Screenshot 2023-07-31 195237.png" alt=""> 
                 </div>
                 <div class="item">
-                    <img src="./assests/img/Screenshot 2023-07-30 230705.png" alt=""> 
+                    <img src="./assests/img/Screenshot 2023-07-31 195237.png" alt=""> 
                 </div>
                 <button class="" id="next">></button>
                 <button class="" id="prev"><</button>
-                <script src="./js/index.js"></script>
+                
             </div>
         </section>
     </main>
+    <script src="./js/index.js"></script>
 </body>
 </html>
