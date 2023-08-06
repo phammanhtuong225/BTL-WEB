@@ -1,0 +1,29 @@
+[{
+    "id" : 1,
+    "image": "./assests/img/Categorys/01-category.jpg",
+    "name": "Rap"
+}, {
+    "id" : 2,
+    "image": "./assests/img/Categorys/02-category.jpg",
+    "name": "EDM"
+}, {
+    "id" : 3,
+    "image": "./assests/img/Categorys/03-category.jpg",
+    "name": "R&B"
+}, {
+    "id" : 4,
+    "image": "./assests/img/Categorys/04-category.jpg",
+    "name": "Ballad"
+}, {
+    "id" : 5,
+    "image": "./assests/img/Categorys/05-category.jpg",
+    "name": "Acoustic"
+}, {
+    "id" : 6,
+    "image": "./assests/img/Categorys/06-category.jpg",
+    "name": "Pop"
+}, {
+    "id" : 7,
+    "image": "./assests/img/Categorys/07-category.jpg",
+    "name": "Bolero"
+}]

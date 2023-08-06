@@ -4,6 +4,53 @@ let items = document.querySelectorAll(".slider .item");
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 let active = 0;
+
+function loadArtists() {
+  fetch("assests/data/artists.json").then(res => res.json()).then(data => {
+      let artistsList = document.getElementById("artists");
+      let artistsHtml = "";
+      for (let artist of data) {
+        artistsHtml += `
+          <li>
+            <div>
+              <div>
+                <a href="">
+                  <img src="${artist.image}" alt="">
+                  <i class="fa-solid fa-play"></i>
+                </a>    
+              </div>
+              <a href="">${artist.name}</a>
+            </div>
+          </li>
+        `;
+      }
+      artistsList.innerHTML = artistsHtml;
+    })
+}
+
+function loadCategorys() {
+  fetch("assests/data/categorys.json").then(res => res.json()).then(data => {
+      let categorysList = document.getElementById("categorys");
+      let categorysHtml = "";
+      for (let category of data) {
+        categorysHtml += `
+          <li>
+            <div>
+              <div>
+                <a href="">
+                  <img src="${category.image}" alt="">
+                  <i class="fa-solid fa-play"></i>
+                </a>    
+              </div>
+              <a href="">${category.name}</a>
+            </div>
+          </li>
+        `;
+      }
+      categorysList.innerHTML = categorysHtml;
+    })
+}
+
 /* Click and show */
 function clickShow(e) {
   e.style.display = "block";
@@ -49,7 +96,7 @@ function loadShow() {
   items[active].style.opacity = 1;
   for (var i = active + 1; i < items.length; i++) {
     stt++;
-    items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.2 * stt}) perspective(16px) rotateY(-1deg)`;
+    items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
     items[i].style.zIndex = -stt;
     items[i].style.filter = "blur(5px)";
     items[i].style.opacity = stt > 2 ? 0 : 0.6;
@@ -65,7 +112,10 @@ function loadShow() {
 }
 
 
+
 window.onload = function () {
+  loadArtists();
+  loadCategorys();
   /* Click user */
   clickFull(btnUser, vUser);
   /* Slider animation */

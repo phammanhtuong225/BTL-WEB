@@ -25,15 +25,23 @@ body {
 .search:hover .search-btn,
 ul.v-user > li > a:hover,
 .setting-user > div:hover > button,
-ul.menu > li:hover,
-ul.menu > li:hover > a,
-ul.menu > li:hover > button {
+ul.menu > li:hover {
     background-color: var(--violet);
     text-shadow: 3px 3px 5px var(--blackblue);
     color: var(--whitenew);
-    transition: 0.25s;
-    transition: color 0.35s;
+    cursor: pointer;
+    transition: text-shadow 0.25s, background-color 0.7s, color 0.5s;
 }
+
+ul.menu > li:hover > a,
+ul.menu > li:hover > button,
+#next:hover, #prev:hover,
+.container > ul > li:hover > h2,
+.container > ul > li > div > a:hover {
+    color: var(--whitenew);
+    transition: color 0.5s;
+}
+
 
 /*Start header */
 header {
@@ -161,6 +169,7 @@ ul.header > li {
 /* Start Main */
 .right {
     width: 85%;
+    margin: 0 3rem;
 }
 /* Start nav*/
 .left {
@@ -194,18 +203,21 @@ ul.menu > li > button {
 /* End Main */
 .slider {
     position: relative;
-    height: 18rem;
+    height: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .item {
     position: absolute;
     transition: 0.5s;
-    left: calc(50% - 200px);
-    padding: 20px;
+    left: calc(50% - 150px);
+    width: 25%;
 }
 
 .item > img {
-    width: 20rem;
+    width: 100%;
     border-radius: 1rem;
 }
 
@@ -221,11 +233,99 @@ ul.menu > li > button {
     left: 50px;
 }
 
-#next:hover, #prev:hover {
-    color: var(--whitenew);
-}
-
 #next {
     left: unset;
     right: 50px;
 }
+
+/* Star artists */
+.container {
+    height: 40vh;
+    overflow: hidden;
+}
+
+.container > ul {
+    list-style-type: none;
+}
+
+.container > ul > li > h2 {
+    display: block;
+    color: var(--white);
+}
+
+.container > ul > li > div > a {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.container > ul.header-container > li > div > a {
+    display: none;
+    padding: 0;
+}
+
+@keyframes leftToRight {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+}
+
+.container:hover > ul.header-container > li > div > a {
+    display: block;
+    animation: leftToRight 1s forwards;
+}
+
+.container > ul.v-container {
+    flex-wrap: wrap;
+}
+
+.container > ul.v-container > li {
+    width: 20%;
+}
+
+.container > ul.v-container > li > div {
+    padding: 1rem;
+}
+
+.container > ul.v-container > li > div > div {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+.container > ul.v-container > li > div > div > a > img {
+    width: 100%;
+    transition: opacity 0.5s;
+}
+
+.container > ul.v-container > li > div > div > a > i {
+    border: 1px solid var(--whitenew);
+    padding: 0.7rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: var(--whitenew);
+}
+
+.container > ul.v-container > li > div > div:hover > a > i {
+    display: block;
+}
+
+.container > ul.v-container > li > div > div:hover > a > img {
+    transform: scale(1.3);
+    transition: transform 1s;
+    opacity: 0.6;
+}
+/* End artists */
+
