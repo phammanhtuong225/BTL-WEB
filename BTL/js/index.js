@@ -5,6 +5,31 @@ let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 let active = 0;
 
+
+
+function loadFeatureds() {
+  fetch("assests/data/featureds.json").then(res => res.json()).then(data => {
+      let featuredsList = document.getElementById("featured");
+      let featuredsHtml = "";
+      for (let featured of data) {
+        featuredsHtml += `
+          <li>
+            <div>
+              <div>
+                <a href="">
+                  <img src="${featured.image}" alt="">
+                  <i class="fa-solid fa-play"></i>
+                </a>    
+              </div>
+              <a href="">${featured.name}</a>
+            </div>
+          </li>
+        `;
+      }
+      featuredsList.innerHTML = featuredsHtml;
+    })
+}
+
 function loadArtists() {
   fetch("assests/data/artists.json").then(res => res.json()).then(data => {
       let artistsList = document.getElementById("artists");
@@ -114,6 +139,7 @@ function loadShow() {
 
 
 window.onload = function () {
+  loadFeatureds();
   loadArtists();
   loadCategorys();
   /* Click user */
@@ -144,5 +170,172 @@ window.onload = function () {
   // slider.addEventListener("mouseout", () => {
   //   autoSlideTimer = setInterval(autoSlideShow, autoSlideInterval);
   // });
-  
+
+
+  /* Focus */
+  let menuFocus = document.querySelectorAll(".menu li, .menu a, .menu button");
+  menuFocus.forEach((e) => {
+    e.addEventListener("click", (event) => {
+      menuFocus.forEach((el) => el.classList.remove("focus"));
+      e.classList.add("focus");
+    });
+  });
+  /* End focus */
 };
+
+
+/* Form */
+let register = document.querySelector('.js-register')
+let modal = document.querySelector('.js-modal')
+let modal1 = document.querySelector('.js-modal1')
+let modal2 = document.querySelector('.js-modal2')
+let modal3 = document.querySelector('.js-modal3')
+let modal4 = document.querySelector('.js-modal4')
+let modal5 = document.querySelector('.js-modal5')
+let login = document.querySelector('.js-login')
+let exit = document.querySelector('.exit')
+let exit1 = document.querySelector('.exit1')
+let exit2 = document.querySelector('.exit2')
+let exit3 = document.querySelector('.exit3')
+let exit4 = document.querySelector('.exit4')
+let exit5 = document.querySelector('.exit5')
+
+function showLog() {
+    modal.classList.add('open')
+}
+register.addEventListener('click', function(event) {
+    event.preventDefault();
+    showLog();
+});
+
+function hideLog() {
+    modal.classList.remove('open')
+}
+exit.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideLog();
+});
+
+function showLog1() {
+    modal1.classList.add('open')
+}
+
+function hideLog1() {
+    modal1.classList.remove('open')
+}
+login.addEventListener('click', function(event) {
+    event.preventDefault();
+    showLog1();
+});
+exit1.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideLog1();
+});
+
+function showLog2() {
+    modal2.classList.add('open')
+}
+
+function hideLog2() {
+    modal2.classList.remove('open')
+}
+
+function showLog3() {
+    modal3.classList.add('open')
+}
+
+function hideLog3() {
+    modal3.classList.remove('open')
+}
+
+function showLog4() {
+    modal4.classList.add('open')
+}
+
+function hideLog4() {
+    modal4.classList.remove('open')
+}
+
+function showLog5() {
+    modal5.classList.add('open')
+}
+
+function hideLog5() {
+    modal5.classList.remove('open')
+}
+
+function validate(e) {
+    if (e.value === "") {
+        return true;
+    }
+    return false;
+}
+
+function signup() {
+    event.preventDefault();
+    var email = document.getElementById("signup-email")
+    var password = document.getElementById("signup-password")
+    var Repassword = document.getElementById("Resignup-password")
+    if (validate(email) === true || validate(password) === true) {
+        alert("Chưa điền đầy đủ thông tin")
+        return;
+    }
+    if (password.value !== Repassword.value) {
+        showLog5();
+        exit5.addEventListener('click', function(event) {
+            event.preventDefault();
+            hideLog5();
+        });
+        return;
+    }
+    var user = {
+        email: email.value,
+        password: password.value,
+    }
+    var json = JSON.stringify(user)
+    localStorage.setItem(email, json)
+    showLog4();
+    exit4.addEventListener('click', function(event) {
+        event.preventDefault();
+        hideLog4();
+    });
+    hideLog();
+    register.innerText = "Chào"
+    login.innerText = email.value
+    return;
+}
+
+function dangnhap() {
+    event.preventDefault();
+    var email = document.getElementById("login-email")
+    var password = document.getElementById("login-password")
+    if (validate(email) === true || validate(password) === true) {
+        alert("Chưa điền đầy đủ thông tin")
+        return;
+    }
+    var user1 = localStorage.getItem(email)
+    var data = JSON.parse(user1)
+    if (email.value === data.email && password.value === data.password) {
+        showLog2();
+        exit2.addEventListener('click', function(event) {
+            event.preventDefault();
+            hideLog2();
+        });
+        hideLog1();
+        register.innerText = "Chào"
+        login.innerText = email.value
+        return;
+    } else {
+        showLog3();
+        exit3.addEventListener('click', function(event) {
+            event.preventDefault();
+            hideLog3();
+        });
+        return;
+    }
+}
+
+
+
+
+

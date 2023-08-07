@@ -46,6 +46,24 @@ ul.menu > li:hover > button,
 /*Start header */
 header {
     border-bottom: 2px solid var(--blueviolet);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: var(--blackblue);
+}
+
+main {
+    margin-top: 5.25rem;
+    margin-left: 15%;
+}
+
+.left {
+    position: fixed;
+    top: 5.25rem;
+    left: 0;
+    bottom: 0;
 }
 
 .header {
@@ -168,7 +186,6 @@ ul.header > li {
 
 /* Start Main */
 .right {
-    width: 85%;
     margin: 0 3rem;
 }
 /* Start nav*/
@@ -187,6 +204,11 @@ ul.header > li {
     align-items: center;
 }
 
+.focus {
+    background-color: var(--blueviolet);
+    border-left: 4px solid var(--violet);
+}
+
 ul.menu > li > a {
     text-decoration: none;
     display: block;
@@ -198,7 +220,7 @@ ul.menu > li > button {
     margin-left: 2rem;
     display: block;
     background-color: transparent;
-}  
+}
 
 /* End Main */
 .slider {
@@ -214,6 +236,7 @@ ul.menu > li > button {
     transition: 0.5s;
     left: calc(50% - 150px);
     width: 25%;
+    
 }
 
 .item > img {
@@ -329,3 +352,160 @@ ul.menu > li > button {
 }
 /* End artists */
 
+
+
+
+
+
+/* Star Form */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+}
+
+.modal-body {
+    margin: auto;
+    border-radius: 5px;
+    background-color: var(--blueviolet);
+    color: var(--whitenew);
+    position: relative;
+}
+
+.auto-form {
+    padding: 0 32px;
+    width: 600px;
+    animation: modalFaceIn ease 0.5s;
+}
+
+.auto-form-header {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auto-form-heading {
+    font-size: 2.2rem;
+    font-weight: 400px;
+}
+
+.auto-form-switch-btn {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.auth-form-input {
+    width: 100%;
+    margin-top: 16px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #888;
+}
+
+.auth-form-input:focus {
+    border-color: #888;
+}
+
+.auto-form-aside {
+    margin-top: 18px;
+}
+
+.auto-form-p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    padding: 0 12px;
+}
+
+.auto-form-p1 {
+    text-decoration: none;
+    color: #888;
+}
+
+.auto-form-controls {
+    padding-right: 1rem;
+    margin-top: 80px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn123 {
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.auto-form-controls-back {
+    margin-right: 8px;
+}
+
+.auto-form- {
+    padding: 12px 36px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconsocial {
+    font-size: 18px;
+}
+
+.bth-- {
+    line-height: 36px;
+    border-radius: 3px;
+    color: var(--whitenew);
+}
+
+.modal.open {
+    display: flex;
+}
+
+.auth-form_help {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auto-form_help-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--whitenew);
+}
+
+.auto-form_help-link-1 {
+    display: block;
+    border-left: 1px solid #888;
+    margin: 0 16px;
+    height: 22px;
+}
+
+@keyframes modalFaceIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.auto-form-header-log {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controls {
+    margin-bottom: 10px;
+}
+/* End form */

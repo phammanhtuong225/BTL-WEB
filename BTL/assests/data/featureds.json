@@ -1,0 +1,29 @@
+[{
+    "id" : 1,
+    "image": "./assests/img/Featureds/01-featured.jpg",
+    "name": "Vỡ tan"
+}, {
+    "id" : 2,
+    "image": "./assests/img/Featureds/02-featured.jpg",
+    "name": "Ngày mai em đi mất"
+}, {
+    "id" : 3,
+    "image": "./assests/img/Featureds/03-featured.jpg",
+    "name": "Nơi ta sống"
+}, {
+    "id" : 4,
+    "image": "./assests/img/Featureds/04-featured.jpg",
+    "name": "Mùa hè tuyệt vời"
+}, {
+    "id" : 5,
+    "image": "./assests/img/Featureds/05-featured.jpg",
+    "name": "Cô đơn trên SOFA"
+}, {
+    "id" : 6,
+    "image": "./assests/img/Featureds/06-featured.jpg",
+    "name": "Anh là ai?"
+}, {
+    "id" : 7,
+    "image": "./assests/img/Featureds/07-featured.jpg",
+    "name": "À lôi"
+}]
