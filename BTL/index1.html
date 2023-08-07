@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* CSS để tạo màu nền khi click */
-.clicked {
-  background-color: yellow; /* Màu nền mới khi click */
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <script>
-      alert("dfssd");
-    </script>
+    <!-- Đoạn mã HTML -->
+<input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm">
+<button id="searchButton">Tìm kiếm</button>
+<div id="searchResults"></div>
+<script>
+  // Đoạn mã JavaScript
+document.getElementById("searchButton").onclick = function () {
+  searchSongs();
+};
+
+function searchSongs() {
+  var searchTerm = document.getElementById("searchInput").value.toLowerCase();
+
+  // Sử dụng Fetch API để tải tệp JSON từ máy chủ
+  fetch("songs.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var searchResults = data.songs.filter(function (song) {
+        // Tìm kiếm các bài hát theo từ khóa (search term)
+        return (
+          song.title.toLowerCase().indexOf(searchTerm) !== -1 ||
+          song.artist.toLowerCase().indexOf(searchTerm) !== -1
+        );
+      });
+
+      displaySearchResults(searchResults);
+    });
+}
+
+function displaySearchResults(results) {
+  var searchResultsDiv = document.getElementById("searchResults");
+  searchResultsDiv.innerHTML = "";
+
+  if (results.length === 0) {
+    searchResultsDiv.innerHTML = "<p>Không tìm thấy bài hát.</p>";
+  } else {
+    results.forEach(function (song) {
+      // Ẩn các kết quả tìm kiếm trong giao diện người dùng
+      // Ví dụ: Hiển thị tiêu đề và nghệ sĩ bài hát
+      var songInfo =
+        "<p><strong>" + song.title + "</strong> - " + song.artist + "</p>";
+      searchResultsDiv.innerHTML += songInfo;
+    });
+  }
+}
+
+</script>
 </body>
 </html>

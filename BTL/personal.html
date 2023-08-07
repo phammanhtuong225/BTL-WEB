@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header flex">
+            <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
+            <form class="flex header search">
+                <button class="search-btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
+            </form>
+            <form class="flex header setting-user">
+                <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div>
+                <div><button type="button" class="btn"><i class="fa-solid fa-gear"></i></button></div>
+                <div class="user">
+                    <button type="button" id="btn-user" class="btn"><i class="fa-solid fa-user"></i></button>
+                    <ul id="v-user" class="v-user">
+                        <li><a class="js-register">Đăng kí</a></li>
+                        <li><a class="js-login">Đăng nhập</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </header>
+    <main>
+        <section class="left">
+            <ul class="menu">
+                <li class="flex nav">
+                    <button class="btn-new"><i class="fa-solid fa-music"></i></button>
+                    <a id="kham-pha" href="./index.html">Khám phá</a>
+                </li>
+                <li style="background-color: #2a144d; border-left: 3px solid #4f327c;" class="flex nav">
+                    <button class="btn-new"><i class="fa-solid fa-house"></i></button>
+                    <a id="ca-nhan" href="./personal.html">Cá nhân</a>
+                </li>
+                <li class="flex nav">
+                    <button class="btn-new"><i class="fa-solid fa-chart-simple"></i></button>
+                    <a id="bang-xep-hang" href="#aaaa">Bảng xếp hạng</a>
+                </li>
+                <li class="flex nav">
+                    <button class="btn-new"><i class="fa-solid fa-barcode"></i></button>
+                    <a id="the-loai" href="#aaaaaaa">Thể loại</a>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="right">
+            <div class="personal">
+                <div class="profile">
+                    <img src="./assests/img/Artists/05-artist.jpg" alt="">
+                    <h2>PERSONAL</h2>
+                </div>
+                <div class="music-personal">
+                    <ul>
+                        <li><h2>Bài hát</h2></li>
+                        <li><button class="btn-new btn-all">Phát tất cả</button></li>
+                    </ul>
+                    <ul class="music-song" id="song">
+                        <li>
+                            <div>
+                                <button class="btn-new clickmusic"><i class="fa-solid fa-play"></i></button>
+                                <h3>đasad</h3>
+                            </div>
+                            <div><h3>sadsad</h3></div>
+                            <div><h4>1:3123</h4></div>
+                            <audio src="./assests/music/1.mp3"></audio>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="flex header header-container">
+                    <li><h2>Bài hát nổi bật</h2></li>
+                    <li><div><a href="#">TẤT CẢ &rarr;</a></div></li>
+                </ul>
+                <ul class="flex v-container" id="featured">
+                    <li>
+                        <div>
+                            <div>
+                                <a href="">
+                                    <img src="./assests/img/Artists/01-artist.jpg" alt="">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>    
+                            </div>
+                            <a href="">Test</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <ul class="flex header header-container">
+                    <li><h2>Nghệ sĩ</h2></li>
+                    <li><div><a href="#">TẤT CẢ &rarr;</a></div></li>
+                </ul>
+                <ul class="flex v-container" id="artists">
+                    <li>
+                        <div>
+                            <div>
+                                <a href="">
+                                    <img src="./assests/img/Artists/01-artist.jpg" alt="">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>    
+                            </div>
+                            <a href="">Test</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <ul class="flex header header-container">
+                    <li><h2>Thể loại</h2></li>
+                    <li><div><a href="#">TẤT CẢ &rarr;</a></div></li>
+                </ul>
+                <ul class="flex v-container" id="categorys">
+                    <li>
+                        <div>
+                            <div>
+                                <a href="">
+                                    <img src="./assests/img/RapViet2020.jpeg" alt="">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>    
+                            </div>
+                            <a href="">Test</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- Form Log -->
+    <div class="modal js-modal ">
+        <div class="modal-body">
+            <div class="auto-form">
+                <div class="auto-form-header">
+                    <h3 class="auto-form-heading">Đăng ký </h3>
+                </div>
+                <div class="auto-form-form">
+                    <div class="auto-form-group">
+                        <input type="email" class="auth-form-input" id="signup-email" placeholder="Email của bạn">
+                    </div>
+                    <div class="auto-form-form">
+                        <input type="password" class="auth-form-input" id="signup-password" placeholder="Mật khẩu của bạn">
+                    </div>
+                    <div class="auto-form-form">
+                        <input type="password" class="auth-form-input" id="Resignup-password" placeholder="Nhập lại mật khẩu của bạn">
+                    </div>
+                    <div class="auto-form-aside">
+                        <p class="auto-form-p">
+                            Bằng việc đăng kí, bạn đã đồng ý với TPmusic về
+                            <a href="" class="auto-form-p1">Điều khoản dịch vụ </a>&
+                            <a href="" class="auto-form-p1">Chính sách bảo mật </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="auto-form-controls">
+                <button class="btn123 auto-form-controls-back exit">Thoát</button>
+                <button class="btn123" onclick="signup()">Đăng ký</button>
+            </div>
+            <div class="auto-form-">
+                <a href="" class="btn123 bth-- ">
+                    <i class="iconsocial fa-brands fa-facebook"></i> Kết nối với facebook
+                </a>
+                <a href="" class="btn123 bth--">
+                    <i class="iconsocial fa-brands fa-google"></i> Kết nối với google
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal js-modal1 ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header">
+                    <h3 class="auto-form-heading">Đăng nhập </h3>
+                </div>
+                <div class="auto-form-form">
+                    <div class="auto-form-group">
+                        <input type="email" class="auth-form-input Email-login" id="login-email" placeholder="Email của bạn">
+                    </div>
+                    <div class="auto-form-form">
+                        <input type="password" class="auth-form-input Pass-login" id="login-password" placeholder="Mật khẩu của bạn">
+                    </div>
+                    <div class="auto-form-aside">
+                        <div class="auth-form_help">
+                            <a href="" class="auto-form_help-link">Quên mật khẩu</a>
+                            <span class="auto-form_help-link-1"></span>
+                            <a href="" class="auto-form_help-link">Cần trợ giúp</a>
+                        </div>
+                    </div>
+                    <div class="auto-form-controls">
+                        <button class="btn123 auto-form-controls-back exit1">Thoát</button>
+                        <button class="btn123 login-win" onclick="dangnhap()">Đăng nhập</button>
+                    </div>
+                    <div class="auto-form-">
+                        <a href="" class="btn123 bth-- ">
+                            <i class="iconsocial fa-brands fa-facebook"></i> Kết nối bằng facebook
+                        </a>
+                        <a href="" class="btn123 bth--">
+                            <i class="iconsocial fa-brands fa-google"></i> Kết nối bằng google
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal js-modal2 ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header-log">
+                    <h3 class="auto-form-heading-log">Đăng nhập thành công </h3>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back exit2">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal js-modal3 ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header-log">
+                    <h3 class="auto-form-heading-log">Sai email hoặc mật khẩu </h3>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back exit3">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal js-modal4 ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header-log">
+                    <h3 class="auto-form-heading-log">Đăng ký thành công </h3>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back exit4">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal js-modal5 ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header-log">
+                    <h3 class="auto-form-heading-log">Vui lòng nhập lại đúng mật khẩu</h3>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back exit5">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End Form -->
+    <script src="./js/index.js"></script>
+</body>
+</html>
+
+
+

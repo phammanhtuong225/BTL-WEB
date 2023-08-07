@@ -1,0 +1,43 @@
+[{
+    "image": "./assests/img/Categorys/01-category.jpg",
+    "name": "Vỡ tan",
+    "singer": "Trịnh Thăng Bình",
+    "music": "./assests/music/1.mp3",
+    "time": "04:19"
+}, {
+    "image": "./assests/img/Categorys/02-category.jpg",
+    "name": "Ngày mai em đi mất",
+    "singer": "Khải Đăng x Đạt G",
+    "music": "./assests/music/2.mp3",
+    "time": "04:08"
+}, {
+    "image": "./assests/img/Categorys/03-category.jpg",
+    "name": "Nơi ta sống",
+    "singer": "Long nón lá x Mikelodic",
+    "music": "./assests/music/3.mp3",
+    "time": "02:54"
+}, {
+    "image": "./assests/img/Categorys/04-category.jpg",
+    "name": "Mùa hè tuyệt vời",
+    "singer": "Đức Phúc",
+    "music": "./assests/music/4.mp3",
+    "time": "03:32"
+}, {
+    "image": "./assests/img/Categorys/05-category.jpg",
+    "name": "Cô đơn trên SOFA",
+    "singer": "Trung Quân cover",
+    "music": "./assests/music/5.mp3",
+    "time": "04:43"
+}, {
+    "image": "./assests/img/Categorys/06-category.jpg",
+    "name": "Anh là ai?",
+    "singer": "Huỳnh Công Hiếu x DT",
+    "music": "./assests/music/6.mp3",
+    "time": "04:36"
+}, {
+    "image": "./assests/img/Categorys/07-category.jpg",
+    "name": "À lôi",
+    "singer": "Double2T x Masew",
+    "music": "./assests/music/7.mp3",
+    "time": "03:12"
+}]
