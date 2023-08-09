@@ -6,6 +6,7 @@
     --violet: #4f327c;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -190,7 +191,7 @@ ul.header > li {
 .btn-new {
     border: none;
     cursor: pointer;
-    background-color: var(--blackblue);
+    background-color: transparent;
 }
 .nav {
     align-items: center;
@@ -326,7 +327,6 @@ ul.v-container > li > div > div:hover > a > img {
     padding: 3rem;
     position: relative;
 }
-
 .profile::after {
     content: "";
     position: absolute;
@@ -336,9 +336,6 @@ ul.v-container > li > div > div:hover > a > img {
     height: 1px;
     background-color: var(--whitenew);
 }
-
-
-
 @keyframes rotateImg {
     from {
       transform: rotate(0);
@@ -347,7 +344,6 @@ ul.v-container > li > div > div:hover > a > img {
         transform: rotate(360deg);
     }
 }
-
 .profile > img {
     width: 10%;
     border-radius: 50%;
@@ -381,6 +377,7 @@ ul.music-song {
     flex-direction: column;
 }
 ul.music-song > li {
+    
     border-radius: 0.5rem;
     padding: 1rem;
     width: 100%;
@@ -413,6 +410,7 @@ ul.music-song > li > div > button {
     margin-right: 0.5rem;
     background-color: transparent;
 }
+
 
 
 
@@ -568,3 +566,110 @@ ul.music-song > li > div > button {
     margin-bottom: 10px;
 }
 /* End form */
+
+
+/* Control Music */
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--blueviolet);
+    color: var(--white);
+}
+
+
+.dashboard {
+    display: flex;
+}
+
+.dashboard > div:first-child {
+    width: 30%;
+    overflow: hidden;
+}
+
+.dashboard > div:nth-child(2) {
+    width: 40%;
+}
+
+.dashboard > div:nth-child(3) {
+    width: 30%;
+}
+
+.dashboard > div > div > img {
+    height: 82px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    animation: rotateImg 7s infinite linear;
+    margin-right: 1rem;
+}
+
+.dashboard > div {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.cd-thumb {
+    display: flex;
+    align-items: center;
+}
+
+.control {
+    flex-direction: column;
+}
+
+.control > div:first-child {
+    display: flex;
+}
+
+.control > div:last-child {
+    width: 70%;
+}
+
+.control > div:first-child > div {
+    padding: 1rem;
+}
+
+.control > div:last-child > input {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+}
+
+.player .icon-pause,
+.icon-icon-min {
+    display: none;
+  }
+  
+.player.playing .icon-pause,
+.icon-icon-min {
+    display: inline-block;
+}
+  
+.player.playing .icon-play,
+.icon-max {
+    display: none;
+}
+
+.dashboard > div:nth-child(3) {
+    padding-left: 10%;
+}
+
+
+.dashboard > div > div {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard > div > div > input {
+    margin-left: 1rem;
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+}
+
+.control .btn-active.active {
+    color: var(--violet);
+}
+
