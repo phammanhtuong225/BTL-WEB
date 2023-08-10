@@ -2,7 +2,8 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 const player = $(".player");
 const cd = $(".cd");
-const heading = $(".tieude");
+const heading = $(".title-song h3");
+const headingName = $(".title-song h4");
 const cdThumb = $(".cd-thumb");
 const audio = $("#audio");
 const playBtn = $(".btn-toggle-play");
@@ -16,7 +17,9 @@ const iconMax = $(".icon-max");
 const iconMin = $(".icon-min");
 const volumeControl = $(".volume-control");
 const volumeSlider = $("#volume");
-
+const musicImg = $(".music-image");
+const startTime = $(".start-time");
+const startEnd = $(".start-end");
 
 
 
@@ -32,42 +35,49 @@ const app = {
       singer: "Trịnh Thăng Bình",
       path: "./assests/music/1.mp3",
       image: "./assests/img/Categorys/01-category.jpg",
+      time: "04:19",
     },
     {
       name: "Ngày mai em đi mất",
       singer: "Khải Đăng x Đạt G",
       path: "./assests/music/2.mp3",
       image: "./assests/img/Categorys/02-category.jpg",
+      time: "04:08",
     },
     {
       name: "Nơi ta sống",
       singer: "Long nón lá x Mikelodic",
       path: "./assests/music/3.mp3",
       image: "./assests/img/Categorys/03-category.jpg",
+      time: "02:54",
     },
     {
       name: "Mùa hè tuyệt vời",
-      singer: "RĐức Phúc",
+      singer: "Đức Phúc",
       path: "./assests/music/4.mp3",
       image: "./assests/img/Categorys/04-category.jpg",
+      time: "03:32",
     },
     {
       name: "Cô đơn trên SOFA",
       singer: "Trung Quân cover",
       path: "./assests/music/5.mp3",
       image: "./assests/img/Categorys/05-category.jpg",
-    },
-    {
-      name: "À lôi",
-      singer: "Double2T x Masew",
-      path: "./assests/music/7.mp3",
-      image:"./assests/img/Categorys/07-category.jpg",
+      time: "04:43",
     },
     {
       name: "Anh là ai?",
       singer: "Huỳnh Công Hiếu x DT",
       path: "./assests/music/6.mp3",
       image: "./assests/img/Categorys/06-category.jpg",
+      time: "04:36",
+    },
+    {
+      name: "À lôi",
+      singer: "Double2T x Masew",
+      path: "./assests/music/7.mp3",
+      image:"./assests/img/Categorys/07-category.jpg",
+      time: "03:12",
     }
   ],
   setConfig: function (key, value) {
@@ -130,6 +140,9 @@ const app = {
           (audio.currentTime / audio.duration) * 100
         );
         progress.value = progressPercent;
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        startTime.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
       }
     };
     // Xử lý khi tua song
@@ -191,7 +204,6 @@ const app = {
           _this.render();
           audio.play();
         }
-
         // Xử lý khi click vào song option
         if (e.target.closest(".option")) {
         }
@@ -232,8 +244,14 @@ const app = {
   },
   loadCurrentSong: function () {
     heading.textContent = this.currentSong.name;
+    headingName.textContent = this.currentSong.singer;
+    startEnd.textContent = this.currentSong.time;
+    musicImg.style.backgroundImage = `url('${this.currentSong.image}')`;;
     audio.src = this.currentSong.path;
   },
+
+  
+  
   loadConfig: function () {
     this.isRandom = this.config.isRandom;
     this.isRepeat = this.config.isRepeat;
@@ -277,6 +295,6 @@ const app = {
     // Render playlist
     this.render();
   },
+  
 };
-
 app.start();

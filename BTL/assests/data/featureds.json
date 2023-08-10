@@ -1,29 +1,31 @@
 [{
     "id" : 1,
     "image": "./assests/img/Featureds/01-featured.jpg",
-    "name": "Vỡ tan"
+    "name": "Vỡ tan",
+    "music": "./assests/music/1.mp3"
 }, {
     "id" : 2,
     "image": "./assests/img/Featureds/02-featured.jpg",
-    "name": "Ngày mai em đi mất"
+    "name": "Ngày mai em đi mất",
+    "music": "./assests/music/1.mp3"
 }, {
     "id" : 3,
     "image": "./assests/img/Featureds/03-featured.jpg",
-    "name": "Nơi ta sống"
+    "name": "Nơi ta sống",
+    "music": "./assests/music/1.mp3"
 }, {
     "id" : 4,
     "image": "./assests/img/Featureds/04-featured.jpg",
-    "name": "Mùa hè tuyệt vời"
+    "name": "Mùa hè tuyệt vời",
+    "music": "./assests/music/1.mp3"
 }, {
     "id" : 5,
     "image": "./assests/img/Featureds/05-featured.jpg",
-    "name": "Cô đơn trên SOFA"
+    "name": "Cô đơn trên SOFA",
+    "music": "./assests/music/1.mp3"
 }, {
     "id" : 6,
     "image": "./assests/img/Featureds/06-featured.jpg",
-    "name": "Anh là ai?"
-}, {
-    "id" : 7,
-    "image": "./assests/img/Featureds/07-featured.jpg",
-    "name": "À lôi"
+    "name": "Anh là ai?",
+    "music": "./assests/music/1.mp3"
 }]

@@ -12,9 +12,11 @@
     <header>
         <div class="header flex">
             <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
-            <form class="flex header search">
-                <button type="button" class="search-btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
+            <form id="search-form" class="flex header search">
+                <button class="search-btn btn" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
+
+
             </form>
             <form class="flex header setting-user">
                 <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div>
@@ -73,21 +75,44 @@
                 <button class="" id="next">></button>
                 <button class="" id="prev"><</button>
             </div>
+            <div style="display: none;" class="personal">
+                <div class="profile">
+                    <img src="./assests/img/Artists/05-artist.jpg" alt="">
+                    <h2>PERSONAL</h2>
+                </div>
+                <div class="music-personal">
+                    <ul>
+                        <li><h2>Bài hát</h2></li></ul>
+                    <div class="playlist">
+                        <div class="song">
+                          <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
+                          </div>
+                          <div class="body">
+                            <h3 class="title">Music name</h3>
+                            <p class="author">Singer</p>
+                          </div>
+                          <div class="option">
+                            <i class="fas fa-ellipsis-h"></i>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <ul class="flex header header-container">
                     <li><h2>Bài hát nổi bật</h2></li>
-                    <li><div><a href="#">TẤT CẢ &rarr;</a></div></li>
+                    <li><div><a href="./featured.html">TẤT CẢ &rarr;</a></div></li>
                 </ul>
                 <ul class="flex v-container" id="featured">
                     <li>
-                        <div>
+                        <div class="featured" data-song="Nơi ta sống">
                             <div>
-                                <a href="">
+                                <a>
                                     <img src="./assests/img/Artists/01-artist.jpg" alt="">
                                     <i class="fa-solid fa-play"></i>
                                 </a>    
                             </div>
-                            <a href="">Test</a>
+                            <a>Nơi ta sống</a>
                         </div>
                     </li>
                 </ul>
@@ -273,10 +298,10 @@
         <div class="dashboard">
           <div class="cd">
             <div class="cd-thumb">
-                <img src="./assests/img/Artists/02-artist.jpg" alt="">
-                <div class="tieude">
-                    <h4>Now playing:</h4>
-                    <h2>String 57th & 9th</h2>
+                <div style="background-image: url(./assests/img/Artists/02-artist.jpg);" class="music-image"></div>
+                <div class="title-song">
+                    <h3>Now playing:</h3>
+                    <h4>String 57th & 9th</h4>
                   </div>
             </div>
           </div>
@@ -300,7 +325,11 @@
                     <i class="fas fa-random"></i>
                 </div>
             </div>
-            <div><input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100"></div>
+            <div>
+                <div class="start-time">00:00</div>
+                <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                <div class="start-end">04:12</div>
+            </div>
           </div>
           <div>
             <div class="btn-new btn-random">
@@ -313,45 +342,7 @@
           </div>
           <audio id="audio" src=""></audio>
         </div>
-      
-        <!-- Playlist -->
-        <div style="display: none;" class="playlist">
-          <div class="song">
-            <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
-            </div>
-            <div class="body">
-              <h3 class="title">Music name</h3>
-              <p class="author">Singer</p>
-            </div>
-            <div class="option">
-              <i class="fas fa-ellipsis-h"></i>
-            </div>
-          </div>
-          <div class="song">
-            <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
-            </div>
-            <div class="body">
-              <h3 class="title">Music name</h3>
-              <p class="author">Singer</p>
-            </div>
-            <div class="option">
-              <i class="fas fa-ellipsis-h"></i>
-            </div>
-          </div>
-          <div class="song">
-            <div class="thumb" style="background-image: url('https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg')">
-            </div>
-            <div class="body">
-              <h3 class="title">Music name</h3>
-              <p class="author">Singer</p>
-            </div>
-            <div class="option">
-              <i class="fas fa-ellipsis-h"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    </div>
     <!-- End Form -->
     <script src="./js/music.js"></script>
     <script src="./js/index.js"></script>
