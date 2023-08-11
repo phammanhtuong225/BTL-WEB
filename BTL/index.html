@@ -19,8 +19,19 @@
 
             </form>
             <form class="flex header setting-user">
-                <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div>
-                <div><button type="button" class="btn"><i class="fa-solid fa-gear"></i></button></div>
+                <div><button type="button" class="btn" id="setting-button"><i class="fa-solid fa-gear"></i></button>
+                    <ul class="v-user v-user-setting" id="setting">
+                        <li>
+                            <a href="" id="change-color">Thay đổi màu nền</a>
+                        </li>
+                        <li>
+                            <a href="" id="introduce">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="#footer">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="user">
                     <button type="button" id="btn-user" class="btn"><i class="fa-solid fa-user"></i></button>
                     <ul id="v-user" class="v-user">
@@ -34,7 +45,7 @@
     <main>
         <section class="left">
             <ul class="menu">
-                <li  style="background-color: #2a144d; border-left: 3px solid #4f327c;" class="flex nav">
+                <li class="flex nav active-menu">
                     <button class="btn-new"><i class="fa-solid fa-music"></i></button>
                     <a id="kham-pha" href="./index.html">Khám phá</a>
                 </li>
@@ -154,6 +165,28 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div id="footer" class="footers">
+                <div class="footer-l">
+                    <p>Viết phản hồi</p>
+                    <input type="text " placeholder="Nhập vào đây... " class="input-">
+                    <button id="send" class="input-">Gửi</button>
+                </div>
+                <div class=" footer-r">
+                    <p class="title-footer">
+                        <i class="fa-solid fa-earth-americas icon-footer "></i> Thông tin liên hệ
+                    </p>
+                    <p class="a">
+                        <i class="fa-solid fa-location-dot icon-footer "></i> 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh,Việt Nam
+                    </p>
+                    <p class="a">
+                        <i class="fa-solid fa-phone icon-footer"></i> 0367979779
+                    </p>
+                    <p class="a">
+                        <i class="fa-brands fa-linkedin icon-footer"></i>
+                        <a href="https://www.linkedin.com/company/fpt-software/?originalSubdomain=vn " class="linkedin1">Bấm vào đây</a>
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -291,7 +324,39 @@
         </div>
     </div>
     </div>
-
+    <!-- Gioi thieu -->
+    <div class="modal js-modal-intro ">
+        <div class="modal-body">
+            <div class="auto-form">
+                <img class="logo-introduce" src="assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt="#">
+                <div class="auto-form-aside">
+                    <h2 class="auto-form-p1">
+                        Giấy phép mạng xã hội: 157/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 24/4/2019
+                    </h2>
+                    <h2 class="auto-form-p1">
+                        Chủ quản: Công Ty Cổ Phần TP 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh
+                    </h2>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back1 exit6">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End introduce -->
+    <div class="modal js-modal-send  ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header-contact">
+                    <h3>Hệ thống ghi nhận nội dung phản hồi của quý khách,cảm ơn quý khách đã phản hồi</h3>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back exit10">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Control Music -->
     <div class="player">
         <!-- Dashboard -->

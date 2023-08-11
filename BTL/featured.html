@@ -25,8 +25,19 @@
                 <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
             </form>
             <form class="flex header setting-user">
-                <div><button type="button" class="btn"><i class="fa-solid fa-bell"></i></button></div>
-                <div><button type="button" class="btn"><i class="fa-solid fa-gear"></i></button></div>
+                <div><button type="button" class="btn" id="setting-button"><i class="fa-solid fa-gear"></i></button>
+                    <ul class="v-user v-user-setting" id="setting">
+                        <li>
+                            <a href="" id="change-color">Thay đổi màu nền</a>
+                        </li>
+                        <li>
+                            <a href="" id="introduce">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="#footer">Liên hệ</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="user">
                     <button type="button" id="btn-user" class="btn"><i class="fa-solid fa-user"></i></button>
                     <ul id="v-user" class="v-user">
@@ -44,7 +55,7 @@
                     <button class="btn-new"><i class="fa-solid fa-music"></i></button>
                     <a id="kham-pha" href="./index.html">Khám phá</a>
                 </li>
-                <li style="background-color: #2a144d; border-left: 3px solid #4f327c;" class="flex nav">
+                <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-house"></i></button>
                     <a id="ca-nhan" href="./personal.html">Cá nhân</a>
                 </li>

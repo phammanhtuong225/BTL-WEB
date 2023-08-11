@@ -1,5 +1,7 @@
 let btnUser = document.getElementById("btn-user");
 let vUser = document.getElementById("v-user");
+let setting = document.getElementById("setting");
+let setting_button = document.getElementById("setting-button");
 let items = document.querySelectorAll(".slider .item");
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
@@ -117,30 +119,31 @@ function clickEnd(e) {
 function clickFull(btnE, e) {
   let userClicked = false;
   let userClicking = false;
-  btnE.onclick = function () {
-    if (userClicked) {
-      e.style.display = "none";
-      userClicked = false;
-    } else {
-      e.style.display = "block";
-      userClicked = true;
-    }
+  btnE.onclick = function() {
+      if (userClicked) {
+          e.style.display = "none";
+          userClicked = false;
+      } else {
+          e.style.display = "block";
+          userClicked = true;
+      }
   };
   // Xử lý sự kiện mouseup khi người dùng kết thúc click
-  document.addEventListener("mouseup", function () {
-    userClicking = false;
+  document.addEventListener("mouseup", function() {
+      userClicking = false;
   });
   // Sự kiện mousedown khi người dùng bắt đầu click
-  btnUser.addEventListener("mousedown", function () {
-    userClicking = true;
+  btnUser.addEventListener("mousedown", function() {
+      userClicking = true;
   });
-  document.addEventListener("click", function (event) {
-    if (event.target === vUser || event.target === btnUser)
-      return;
-    else {
-      vUser.style.display = "none";
-      userClicked = false;
-    }
+  document.addEventListener("click", function(event) {
+      if (event.target === vUser || event.target === btnUser || event.target === setting || event.target === setting_button)
+          return;
+      else {
+          vUser.style.display = "none";
+          setting.style.display = "none";
+          userClicked = false;
+      }
   });
 }
 /* Slider */
@@ -176,6 +179,7 @@ window.onload = function () {
   loadCategorys();
   /* Click user */
   clickFull(btnUser, vUser);
+  clickFull(setting_button, setting);
   /* Slider animation */
   loadShow();
   next.onclick = function () {
@@ -356,6 +360,51 @@ function dangnhap() {
         return;
     }
 }
+// Change - color
+let btn = document.getElementsByClassName(".btn")
+document.getElementById("change-color").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.documentElement.classList.toggle("root1");
+});
+let intro = document.getElementById("introduce")
+let modal_intro = document.querySelector(".js-modal-intro")
+
+function showLogIntro() {
+    modal_intro.classList.add('open')
+}
+
+function hideLogIntro() {
+    modal_intro.classList.remove('open')
+}
+let exit_intro = document.querySelector(".exit6")
+intro.addEventListener('click', function(event) {
+    event.preventDefault();
+    showLogIntro();
+});
+exit_intro.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideLogIntro();
+});
+// Phan hoi cua nguoi nghe
+let send = document.getElementById("send")
+let exit_send = document.querySelector(".exit10")
+let modal_send = document.querySelector(".js-modal-send")
+send.addEventListener('click', function(event) {
+    event.preventDefault();
+    showLogSend();
+});
+
+function showLogSend() {
+    modal_send.classList.add('open')
+}
+
+function hideLogSend() {
+    modal_send.classList.remove('open')
+}
+exit_send.addEventListener('click', function(event) {
+    event.preventDefault();
+    hideLogSend();
+});
 
 
 
