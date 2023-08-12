@@ -13,7 +13,7 @@
         <div class="header flex">
             <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
             <form id="search-form" class="flex header search">
-                <button class="search-btn btn" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="button" class="search-btn btn" id="searchButton" onclick="searchSong()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
 
 
@@ -64,6 +64,8 @@
             </ul>
         </section>
         <section class="right">
+            <div class="search-results">
+              </div>
             <div class="slider">
                 <div class="item">
                     <img src="./assests/img/RapViet2020.jpeg" alt="">

@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -20,9 +12,9 @@
     <header>
         <div class="header flex">
             <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
-            <form class="flex header search">
-                <button class="search-btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
+            <form id="search-form" class="flex header search">
+                <button type="button" class="search-btn btn" id="searchButton" onclick="searchSong()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
             </form>
             <form class="flex header setting-user">
                 <div><button type="button" class="btn" id="setting-button"><i class="fa-solid fa-gear"></i></button>
@@ -51,7 +43,7 @@
     <main>
         <section class="left">
             <ul class="menu">
-                <li class="flex nav">
+                <li class="flex nav active-menu">
                     <button class="btn-new"><i class="fa-solid fa-music"></i></button>
                     <a id="kham-pha" href="./index.html">Khám phá</a>
                 </li>
@@ -70,6 +62,8 @@
             </ul>
         </section>
         <section class="right featured-html">
+            <div class="search-results">
+              </div>
             <div style="display: none;" class="personal">
                 <div class="profile">
                     <img src="./assests/img/Artists/05-artist.jpg" alt="">
@@ -90,7 +84,7 @@
                             <i class="fas fa-ellipsis-h"></i>
                           </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
             <div class="container">
@@ -248,8 +242,40 @@
         </div>
     </div>
     </div>
-    
-
+    <!-- Gioi thieu -->
+    <div class="modal js-modal-intro ">
+        <div class="modal-body">
+            <div class="auto-form">
+                <img class="logo-introduce" src="assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt="#">
+                <div class="auto-form-aside">
+                    <h2 class="auto-form-p1">
+                        Giấy phép mạng xã hội: 157/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 24/4/2019
+                    </h2>
+                    <h2 class="auto-form-p1">
+                        Chủ quản: Công Ty Cổ Phần TP 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh
+                    </h2>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back1 exit6">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End introduce -->
+    <div class="modal js-modal-send  ">
+        <div class="modal-body">
+            <div class="modal-fly"></div>
+            <div class="auto-form">
+                <div class="auto-form-header-contact">
+                    <h3>Hệ thống ghi nhận nội dung phản hồi của quý khách,cảm ơn quý khách đã phản hồi</h3>
+                </div>
+                <div class="auto-form-controls controls">
+                    <button class="btn123 auto-form-controls-back exit10">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Control Music -->
     <div class="player">
         <!-- Dashboard -->
         <div class="dashboard">
@@ -300,13 +326,11 @@
           <audio id="audio" src=""></audio>
         </div>
     </div>
-
-      
     <!-- End Form -->
     <script src="./js/music.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
 
-</body>
-</html>
+
+

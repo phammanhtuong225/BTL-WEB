@@ -12,9 +12,11 @@
     <header>
         <div class="header flex">
             <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
-            <form class="flex header search">
-                <button class="search-btn btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát...">
+            <form id="search-form" class="flex header search">
+                <button type="button" class="search-btn btn" id="searchButton" onclick="searchSong()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
+
+
             </form>
             <form class="flex header setting-user">
                 <div><button type="button" class="btn" id="setting-button"><i class="fa-solid fa-gear"></i></button>
@@ -62,6 +64,9 @@
             </ul>
         </section>
         <section class="right">
+            <div class="search-results">
+                <!-- Kết quả tìm kiếm sẽ được thêm vào đây bằng JavaScript -->
+              </div>
             <div class="personal">
                 <div class="profile">
                     <img src="./assests/img/Artists/05-artist.jpg" alt="">

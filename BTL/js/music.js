@@ -20,8 +20,10 @@ const volumeSlider = $("#volume");
 const musicImg = $(".music-image");
 const startTime = $(".start-time");
 const startEnd = $(".start-end");
-
-
+const searchResultsContainer = $(".search-results");
+const resultMusic = $("#result");
+const searchButton = $("#searchButton");
+const searchInput = $("#searchInput");
 
 const app = {
   currentIndex: 0,
@@ -233,6 +235,47 @@ const app = {
       iconMax.style.display = "inline-block";
       iconMin.style.display = "none";
     };
+    // Tìm kiếm
+    searchButton.onclick = function () {
+      const searchTerm = searchInput.value.toLowerCase();
+      const matchedSongIndexes = _this.songs.reduce((indexes, song, index) => {
+        if (song.name.toLowerCase().includes(searchTerm) || song.singer.toLowerCase().includes(searchTerm)) {
+            indexes.push(index);
+          }
+        return indexes;
+      }, []);
+      if (matchedSongIndexes.length > 0) {
+        searchResultsContainer.innerHTML = ""; // Xóa kết quả tìm kiếm trước đó
+        searchResultsContainer.innerHTML = `
+          <div class="search-info">
+          <h2>Kết quả tìm kiếm: </h2>
+          </div>
+        `;
+        matchedSongIndexes.forEach((index) => {
+          const song = _this.songs[index];
+          const songElement = document.createElement("div");
+          songElement.classList.add("song");
+          songElement.innerHTML = `
+            <div class="thumb" style="background-image: url('${song.image}')"></div>
+            <div class="body">
+              <h3 class="title">${song.name}</h3>
+              <p class="author">${song.singer}</p>
+            </div>
+            <div class="option">
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+          `;
+          songElement.querySelector(".body").addEventListener("click", function () {
+            _this.currentIndex = index;
+            _this.loadCurrentSong();
+            audio.play(); // Phát bài hát
+            _this.render();
+            _this.scrollToActiveSong();
+          });
+          searchResultsContainer.appendChild(songElement);
+        });
+      }
+    };
   },
   scrollToActiveSong: function () {
     setTimeout(() => {
@@ -249,9 +292,6 @@ const app = {
     musicImg.style.backgroundImage = `url('${this.currentSong.image}')`;;
     audio.src = this.currentSong.path;
   },
-
-  
-  
   loadConfig: function () {
     this.isRandom = this.config.isRandom;
     this.isRepeat = this.config.isRepeat;
@@ -279,6 +319,7 @@ const app = {
     this.currentIndex = newIndex;
     this.loadCurrentSong();
   },
+  
   start: function () {
     // Gán cấu hình từ config vào ứng dụng
     this.loadConfig();
@@ -294,7 +335,9 @@ const app = {
 
     // Render playlist
     this.render();
+    app.render(matchedSongIndex);
   },
-  
 };
 app.start();
+
+

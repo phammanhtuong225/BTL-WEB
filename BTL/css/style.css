@@ -399,7 +399,11 @@ li.playing {
 }
 
 
-.playlist {
+.playlist > div {
+    color: var(--white);
+}
+
+.search-results {
     color: var(--white);
 }
 
@@ -798,3 +802,9 @@ html {
 .input- {
     font-size: 20px;
 }
+
+.search-info {
+    padding: 1rem 0;
+}
+
+

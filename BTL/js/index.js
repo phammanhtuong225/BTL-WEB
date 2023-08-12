@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
 function loadFeatureds() {
   fetch("assests/data/featureds.json").then(res => res.json()).then(data => {
       let featuredsList = document.getElementById("featured");
