@@ -196,13 +196,217 @@
     .stt {
         width: 20%;
     }
-
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Áp dụng kiểu dáng cho màn hình có chiều rộng từ 768px đến 1024px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    html {
+        font-size: 1.3em; /* 10px / 16px = 0.625 */
+      }
+    
+      body {
+        margin-bottom: 120px;
+      }
+
+    .logo {
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    .search .search-text {
+        width: 10rem;
+    }
+
+    main {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .right {
+        padding-top: 2rem;
+        margin: 0;
+        margin: 0 1.5rem;
+        margin-top: 108px;
+    }
+    .left {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: unset;
+        z-index: 3;
+        background-color: var(--blueviolet);
+        border-top: 3px solid var(--violet);
+    }
+    ul.menu {
+        display: flex;
+    }
+    ul.menu > li {
+        flex-direction: column;
+        width: 25%;
+        padding: 1rem 0rem;
+    }
+    
+    ul.menu > li > button {
+        margin-left: 0;
+    }
+
+    ul.menu > li > a {
+        padding: 0;
+        padding-top: 0.3rem;
+    }
+
+    .active-menu {
+        background-color: var(--violet);
+        border-left: none;
+    }
+
+    .dashboard {
+        padding: 0.5rem 0;
+    }
+
+    .dashboard > div:nth-child(1) {
+        width: 50%;
+    }
+
+    .dashboard > div:nth-child(2) {
+        width: 50%;
+    }
+
+    .dashboard > div:nth-child(3) {
+        display: none;
+    }
+
+    .control > div:last-child {
+        display: none;
+    }
+
+    .slider {
+        height: 25vh;
+    }
+
+    .item {
+        left: calc(50% - 200px);
+    }
+
+    .item > img {
+        width: 222%;
+    }
+
+    .container {
+        height: 27vh;
+    }
+
+    ul.v-container > li {
+        width: 33%;
+    }
+
+    .container > ul.header-container > li > div > a {
+        display: block;
+    }
+
+    .footers {
+        flex-direction: column;
+    }
+
+    .footer-l {
+        padding: 1rem 0;
+    }
+
+    .a {
+        font-size: 1rem;
+    }
+
+    .input- {
+        padding: 0.2rem;
+        font-size: 0.8rem;
+    }
+
+    .title-footer, .footer-l>p {
+        padding: 0.4rem 0;
+        margin-bottom: 0;
+    }
+
+    .title-footer, .footer-l > p {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    #go-to-top {
+        bottom: 130px;
+    }
+
+    .player {
+        bottom: 88px;
+    }
+
+    /* Cá nhân */
+    .profile {
+        padding: 1rem;
+    }
+
+    .profile > img {
+        width: 25%;
+    }
+
+    .body {
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .thumb {
+        padding-top: 15%;
+        width: 15%;
+    }
+
+    .title {
+        width: 100%;
+    }
+
+    .auto-form {
+        width: 100%;
+        padding: 0;
+        padding: 1rem;
+    }
+
+    .auto-form- {
+        padding: 0;
+        padding: 1rem;
+    }
+
+    .auto-form-controls {
+        margin-top: 2rem;
+    }
+
+    .modal-body {
+        width: 90%;
+    }
+
+    /* rank */
+    .stt {
+        width: 20%;
+    }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1023px) and (max-width: 1300px) {
     /* Áp dụng kiểu dáng cho màn hình có chiều rộng tối thiểu 1200px */
+    .container {
+        height: 34vh;
+    }
+    
+    ul.menu > li > button {
+        margin-left: 1rem;
+    }
+    
+    ul.menu > li > a {
+        padding: 1.5rem 0.4rem;
+    }
+
+    .container > ul.header-container > li > div > a {
+        display: block;
+    }
+
+    .thumb {
+        padding-top: 7%;
+        width: 7%;
+    }
 }
