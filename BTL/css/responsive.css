@@ -1,0 +1,44 @@
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 4rem;
+        margin: 0;
+    }
+
+    .search .search-text {
+        width: 5rem;
+    }
+    .header {
+        align-items: center;
+        justify-content:flex-start;
+    }
+    .setting-user {
+        padding-left: 1rem;
+    }
+    .left {
+        border-right: none;
+    }
+    main {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .right {
+        margin: 0;
+    }
+    .left {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    .player {
+        bottom: 100px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Áp dụng kiểu dáng cho màn hình có chiều rộng từ 768px đến 1024px */
+}
+
+@media (min-width: 1200px) {
+    /* Áp dụng kiểu dáng cho màn hình có chiều rộng tối thiểu 1200px */
+}

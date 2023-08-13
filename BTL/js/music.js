@@ -24,6 +24,10 @@ const searchResultsContainer = $(".search-results");
 const resultMusic = $("#result");
 const searchButton = $("#searchButton");
 const searchInput = $("#searchInput");
+const currentURL = window.location.href;
+const artistBtn = $(".artists");
+const artistName = $("#artist-music");
+
 
 const app = {
   currentIndex: 0,
@@ -80,6 +84,41 @@ const app = {
       path: "./assests/music/7.mp3",
       image:"./assests/img/Categorys/07-category.jpg",
       time: "03:12",
+    },
+    {
+      name: "Faded",
+      singer: "Alan Walker",
+      path: "./assests/music/8.mp3",
+      image: "./assests/img/Categorys/08-category.jpg",
+      time: "03:33",
+    },
+    {
+      name: "Cao ốc 20",
+      singer: "Bray x Đạt G",
+      path: "./assests/music/9.mp3",
+      image: "./assests/img/Categorys/06-category.jpg",
+      time: "04:14",
+    },
+    {
+      name: "Making my way",
+      singer: "Sơn Tùng",
+      path: "./assests/music/10.mp3",
+      image: "./assests/img/Categorys/06-category.jpg",
+      time: "04:18",
+    },
+    {
+      name: "Nắng ấm ngang qua",
+      singer: "Sơn Tùng",
+      path: "./assests/music/11.mp3",
+      image: "./assests/img/Categorys/06-category.jpg",
+      time: "03:15",
+    },
+    {
+      name: "Thị mầu",
+      singer: "Hòa Minzy x Masew",
+      path: "./assests/music/12.mp3",
+      image: "./assests/img/Categorys/06-category.jpg",
+      time: "03:21",
     }
   ],
   setConfig: function (key, value) {
@@ -105,6 +144,28 @@ const app = {
   `;
     });
     playlist.innerHTML = htmls.join("");
+  },
+  renderRank: function () {
+    const htmlsRank = this.songs.map((song, index) => {
+      return `
+      <div class="song ${
+        index === this.currentIndex ? "active" : ""
+      }" data-index="${index}">
+          <div class="stt">${index + 1}</div>
+          <div class="thumb"
+              style="background-image: url('${song.image}')">
+          </div>
+          <div class="body">
+              <h3 class="title">${song.name}</h3>
+              <p class="author">${song.singer}</p>
+          </div>
+          <div class="option">
+              <i class="fas fa-ellipsis-h"></i>
+          </div>
+      </div>
+  `;
+    });
+    playlist.innerHTML = htmlsRank.join("");
   },
   defineProperties: function () {
     Object.defineProperty(this, "currentSong", {
@@ -160,7 +221,11 @@ const app = {
         _this.nextSong();
       }
       audio.play();
-      _this.render();
+      if (currentURL.includes("rank.html")) {
+        _this.renderRank();
+      } else {
+        _this.render();
+      }
       _this.scrollToActiveSong();
     };
     // Khi prev song
@@ -171,7 +236,11 @@ const app = {
         _this.prevSong();
       }
       audio.play();
-      _this.render();
+      if (currentURL.includes("rank.html")) {
+        _this.renderRank();
+      } else {
+        _this.render();
+      }
       _this.scrollToActiveSong();
     };
     // Xử lý bật / tắt random song
@@ -203,7 +272,11 @@ const app = {
         if (songNode) {
           _this.currentIndex = Number(songNode.dataset.index);
           _this.loadCurrentSong();
-          _this.render();
+          if (currentURL.includes("rank.html")) {
+            _this.renderRank();
+          } else {
+            _this.render();
+          }
           audio.play();
         }
         // Xử lý khi click vào song option
@@ -269,13 +342,20 @@ const app = {
             _this.currentIndex = index;
             _this.loadCurrentSong();
             audio.play(); // Phát bài hát
-            _this.render();
+            if (currentURL.includes("rank.html")) {
+              _this.renderRank();
+            } else {
+              _this.render();
+            }
             _this.scrollToActiveSong();
           });
           searchResultsContainer.appendChild(songElement);
         });
-      }
+      };
     };
+    
+
+
   },
   scrollToActiveSong: function () {
     setTimeout(() => {
@@ -334,10 +414,23 @@ const app = {
     this.loadCurrentSong();
 
     // Render playlist
-    this.render();
-    app.render(matchedSongIndex);
+    if (currentURL.includes("rank.html")) {
+      this.renderRank();
+    } else {
+      this.render();
+    }
   },
 };
 app.start();
 
 
+
+$(document).ready(function() {
+  $(window).scroll(function() { 
+      if($(this).scrollTop()) {
+          $('#go-to-top').fadeIn();
+      } else {
+          $('#go-to-top').fadeOut();
+      }
+  });
+});

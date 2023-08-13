@@ -1,29 +1,29 @@
 [{
     "id" : 1,
     "image": "./assests/img/Artists/01-artist.jpg",
-    "name": "Alan Walker"
+    "artist": "Alan Walker"
 }, {
     "id" : 2,
     "image": "./assests/img/Artists/02-artist.jpg",
-    "name": "Bray"
+    "artist": "Bray"
 }, {
     "id" : 3,
     "image": "./assests/img/Artists/03-artist.jpg",
-    "name": "Sơn Tùng"
+    "artist": "Sơn Tùng"
 }, {
     "id" : 4,
     "image": "./assests/img/Artists/04-artist.jpg",
-    "name": "Đạt G"
+    "artist": "Đạt G"
 }, {
     "id" : 5,
     "image": "./assests/img/Artists/05-artist.jpg",
-    "name": "Hòa Minzy"
+    "artist": "Hòa Minzy"
 }, {
     "id" : 6,
     "image": "./assests/img/Artists/06-artist.jpg",
-    "name": "Bích Phương"
+    "artist": "Bích Phương"
 }, {
     "id" : 7,
     "image": "./assests/img/Artists/07-artist.jpg",
-    "name": "Mr Siro"
+    "artist": "Mr Siro"
 }]

@@ -22,6 +22,37 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = href;
       });
   });
+    var goToTopButton = document.getElementById('go-to-top');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            goToTopButton.style.display = 'block';
+        } else {
+            goToTopButton.style.display = 'none';
+        }
+    });
+
+    goToTopButton.addEventListener('click', function() {
+        scrollToTop(400); // Cuộn lên đầu trang trong 500ms
+    });
+
+    function scrollToTop(duration) {
+        var start = window.scrollY;
+        var startTime = performance.now();
+
+        function animateScroll(timestamp) {
+            var currentTime = timestamp - startTime;
+            var progress = Math.min(currentTime / duration, 1);
+
+            window.scrollTo(0, start * (1 - progress));
+
+            if (currentTime < duration) {
+                requestAnimationFrame(animateScroll);
+            }
+        }
+
+        requestAnimationFrame(animateScroll);
+    }
 });
 
 
@@ -72,14 +103,14 @@ function loadArtists() {
       for (let artist of data) {
         artistsHtml += `
           <li>
-            <div>
+            <div class="artists">
               <div>
-                <a href="">
+              <a>
                   <img src="${artist.image}" alt="">
                   <i class="fa-solid fa-play"></i>
                 </a>    
               </div>
-              <a href="">${artist.name}</a>
+              <a id="artist-music">${artist.artist}</a>
             </div>
           </li>
         `;
@@ -176,6 +207,7 @@ function loadShow() {
 
 
 window.onload = function () {
+  
   loadFeatureds();
   loadArtists();
   loadCategorys();
@@ -365,8 +397,24 @@ function dangnhap() {
 // Change - color
 let btn = document.getElementsByClassName(".btn")
 document.getElementById("change-color").addEventListener("click", function(event) {
-    event.preventDefault();
-    document.documentElement.classList.toggle("root1");
+    event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+    const body = document.body;
+    body.classList.toggle('light-mode');
+
+    // Lưu trạng thái chế độ nền tối vào localStorage
+    if (body.classList.contains('light-mode')) {
+        localStorage.setItem('darkModeEnabled', 'true');
+    } else {
+        localStorage.removeItem('darkModeEnabled');
+    }
+});
+
+// Kiểm tra trạng thái chế độ nền tối đã được lưu trong localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const darkModeEnabled = localStorage.getItem('darkModeEnabled');
+    if (darkModeEnabled === 'true') {
+        document.body.classList.add('light-mode');
+    }
 });
 let intro = document.getElementById("introduce")
 let modal_intro = document.querySelector(".js-modal-intro")
@@ -407,7 +455,5 @@ exit_send.addEventListener('click', function(event) {
     event.preventDefault();
     hideLogSend();
 });
-
-
 
 
