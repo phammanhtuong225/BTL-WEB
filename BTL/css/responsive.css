@@ -32,6 +32,10 @@
         width: 10rem;
     }
 
+    .search:hover .search-text {
+        width: 10rem;
+    }
+
     main {
         margin-top: 0;
         margin-left: 0;
@@ -213,7 +217,11 @@
     }
 
     .search .search-text {
-        width: 10rem;
+        width: 15rem;
+    }
+
+    .search:hover .search-text {
+        width: 15rem;
     }
 
     main {

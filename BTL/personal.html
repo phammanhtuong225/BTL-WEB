@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TPMUSIC - Web nghe nhạc trực tuyến</title>
+    <link rel="icon" href="./assests/img/logo.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +13,7 @@
 <body>
     <header>
         <div class="header flex">
-            <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
+            <a href="./index.html"><img class="logo" src="./assests/img/logo.png" alt=""></a>
             <form id="search-form" class="flex header search">
                 <button type="button" class="search-btn btn" id="searchButton" onclick="searchSong()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
@@ -117,14 +118,14 @@
                 </ul>
                 <ul class="flex v-container" id="artists">
                     <li>
-                        <div>
+                        <div class="artists">
                             <div>
-                                <a href="">
+                                <a>
                                     <img src="./assests/img/Artists/01-artist.jpg" alt="">
                                     <i class="fa-solid fa-play"></i>
-                                </a>    
+                                </a>
                             </div>
-                            <a href="">Test</a>
+                            <a id="artist-music">Bray</a>
                         </div>
                     </li>
                 </ul>
@@ -147,28 +148,6 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-            <div id="footer" class="footers">
-                <div class="footer-l">
-                    <p>Viết phản hồi</p>
-                    <input type="text " placeholder="Nhập vào đây... " class="input-">
-                    <button id="send" class="input-">Gửi</button>
-                </div>
-                <div class=" footer-r">
-                    <p class="title-footer">
-                        <i class="fa-solid fa-earth-americas icon-footer "></i> Thông tin liên hệ
-                    </p>
-                    <p class="a">
-                        <i class="fa-solid fa-location-dot icon-footer "></i> 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh,Việt Nam
-                    </p>
-                    <p class="a">
-                        <i class="fa-solid fa-phone icon-footer"></i> 0367979779
-                    </p>
-                    <p class="a">
-                        <i class="fa-brands fa-linkedin icon-footer"></i>
-                        <a href="https://www.linkedin.com/company/fpt-software/?originalSubdomain=vn " class="linkedin1">Bấm vào đây</a>
-                    </p>
-                </div>
             </div>
         </section>
     </main>
@@ -310,7 +289,7 @@
     <div class="modal js-modal-intro ">
         <div class="modal-body">
             <div class="auto-form">
-                <img class="logo-introduce" src="assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt="#">
+                <img class="logo-introduce" src="assests/img/logo.png" alt="#">
                 <div class="auto-form-aside">
                     <h2 class="auto-form-p1">
                         Giấy phép mạng xã hội: 157/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 24/4/2019

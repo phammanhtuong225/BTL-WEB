@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TPMUSIC - Web nghe nhạc trực tuyến</title>
+    <link rel="icon" href="./assests/img/logo.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +13,7 @@
 <body>
     <header>
         <div class="header flex">
-            <div><img class="logo" src="./assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt=""></div>
+            <a href="./index.html"><img class="logo" src="./assests/img/logo.png" alt=""></a>
             <form id="search-form" class="flex header search">
                 <button type="button" class="search-btn btn" id="searchButton" onclick="searchSong()"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <input class="search-text" type="text" placeholder="Tìm kiếm bài hát..." id="searchInput">
@@ -46,25 +47,24 @@
             <ul class="menu">
                 <li class="flex nav active-menu">
                     <button class="btn-new"><i class="fa-solid fa-music"></i></button>
-                    <a id="kham-pha" href="./index.html">Khám phá</a>
+                    <a href="./index.html">Khám phá</a>
                 </li>
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-house"></i></button>
-                    <a id="ca-nhan" href="./personal.html">Cá nhân</a>
+                    <a href="./personal.html">Cá nhân</a>
                 </li>
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-chart-simple"></i></button>
-                    <a id="bang-xep-hang" href="./rank.html">Bảng xếp hạng</a>
+                    <a href="./rank.html">Bảng xếp hạng</a>
                 </li>
                 <li class="flex nav">
                     <button class="btn-new"><i class="fa-solid fa-barcode"></i></button>
-                    <a id="the-loai" href="./categorys.html">Thể loại</a>
+                    <a href="./categorys.html">Thể loại</a>
                 </li>
             </ul>
         </section>
         <section class="right">
-            <div class="search-results">
-              </div>
+            <div class="search-results"></div>
             <div class="slider">
                 <div class="item">
                     <img src="./assests/img/RapViet2020.jpeg" alt="">
@@ -168,6 +168,25 @@
                     </li>
                 </ul>
             </div>
+            <div class="container ads">
+                <ul class="flex header header-container">
+                    <li><h2 class="name-ads">Đối tác âm nhạc</h2></li>
+                    <li><div><a href="">TẤT CẢ &rarr;</a></div></li>
+                </ul>
+                <ul class="flex v-container" id="advertises">
+                    <li>
+                        <div>
+                            <div>
+                                <a href="">
+                                    <img src="./assests/img/RapViet2020.jpeg" alt="">
+                                    <i class="fa-solid fa-play"></i>
+                                </a>    
+                            </div>
+                            <a href="">Test</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div id="footer" class="footers">
                 <div class="footer-l">
                     <p>Viết phản hồi</p>
@@ -176,13 +195,16 @@
                 </div>
                 <div class=" footer-r">
                     <p class="title-footer">
-                        <i class="fa-solid fa-earth-americas icon-footer "></i> Thông tin liên hệ
+                        <i class="fa-solid fa-earth-americas icon-footer "></i>
+                        <span>Thông tin liên hệ</span>
                     </p>
                     <p class="a">
-                        <i class="fa-solid fa-location-dot icon-footer "></i> 371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh,Việt Nam
+                        <i class="fa-solid fa-location-dot icon-footer "></i>
+                        <span>371 Nguyễn Kiệm, Phường 3, Gò Vấp, Thành phố Hồ Chí Minh,Việt Nam</span>
                     </p>
                     <p class="a">
-                        <i class="fa-solid fa-phone icon-footer"></i> 0367979779
+                        <i class="fa-solid fa-phone icon-footer"></i>
+                        <span>0367979779</span>
                     </p>
                     <p class="a">
                         <i class="fa-brands fa-linkedin icon-footer"></i>
@@ -330,7 +352,7 @@
     <div class="modal js-modal-intro ">
         <div class="modal-body">
             <div class="auto-form">
-                <img class="logo-introduce" src="assests/img/taoanhdep_mega_logo_8619-removebg-preview.png" alt="#">
+                <img class="logo-introduce" src="assests/img/logo.png" alt="#">
                 <div class="auto-form-aside">
                     <h2 class="auto-form-p1">
                         Giấy phép mạng xã hội: 157/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 24/4/2019
@@ -359,7 +381,6 @@
             </div>
         </div>
     </div>
-
 
     <div id="go-to-top"><i class="fa-solid fa-arrow-up"></i></div>
     <!-- Control Music -->
@@ -413,7 +434,7 @@
           <audio id="audio" src=""></audio>
         </div>
     </div>
-    <!-- End Form -->>
+    <!-- End Form -->
     <script src="./js/music.js"></script>
     <script src="./js/index.js"></script>
 </body>

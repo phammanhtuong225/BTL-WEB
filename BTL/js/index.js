@@ -56,7 +56,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+function loadAdvertises() {
+    fetch("assests/data/advertise.json").then(res => res.json()).then(data => {
+        let advertisesList = document.getElementById("advertises");
+        let advertisesHtml = "";
+        for (let advertise of data) {
+          advertisesHtml += `
+            <li>
+              <div>
+                <div>
+                  <a href="${advertise.link}" target="_blank">
+                    <img id="ads-img" src="${advertise.image}" alt="">
+                    <i class="fa-solid fa-play"></i>
+                  </a>    
+                </div>
+              </div>
+            </li>
+          `;
+        }
+        advertisesList.innerHTML = advertisesHtml;
+      })
+  }
 
 function loadFeatureds() {
   fetch("assests/data/featureds.json").then(res => res.json()).then(data => {
@@ -203,14 +223,11 @@ function loadShow() {
   }
 }
 
-
-
-
 window.onload = function () {
-  
   loadFeatureds();
   loadArtists();
   loadCategorys();
+  loadAdvertises();
   /* Click user */
   clickFull(btnUser, vUser);
   clickFull(setting_button, setting);
@@ -231,16 +248,6 @@ window.onload = function () {
     loadShow();
   }
   let autoSlideTimer = setInterval(autoSlideShow, autoSlideInterval);
-  // // Tạm dừng chuyển slide tự động khi chuột di chuyển qua slider
-  // slider.addEventListener("mouseover", () => {
-  //   clearInterval(autoSlideTimer);
-  // });
-  
-  // // Tiếp tục chuyển slide tự động khi chuột rời khỏi slider
-  // slider.addEventListener("mouseout", () => {
-  //   autoSlideTimer = setInterval(autoSlideShow, autoSlideInterval);
-  // });
-
 };
 
 
@@ -400,7 +407,6 @@ document.getElementById("change-color").addEventListener("click", function(event
     event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
     const body = document.body;
     body.classList.toggle('light-mode');
-
     // Lưu trạng thái chế độ nền tối vào localStorage
     if (body.classList.contains('light-mode')) {
         localStorage.setItem('darkModeEnabled', 'true');
@@ -455,5 +461,3 @@ exit_send.addEventListener('click', function(event) {
     event.preventDefault();
     hideLogSend();
 });
-
-

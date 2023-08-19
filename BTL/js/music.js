@@ -24,9 +24,9 @@ const searchResultsContainer = $(".search-results");
 const resultMusic = $("#result");
 const searchButton = $("#searchButton");
 const searchInput = $("#searchInput");
-const currentURL = window.location.href;
 const artistBtn = $(".artists");
 const artistName = $("#artist-music");
+const currentURL = window.location.href;
 
 
 const app = {
@@ -40,84 +40,84 @@ const app = {
       name: "Vỡ tan",
       singer: "Trịnh Thăng Bình",
       path: "./assests/music/1.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
+      image: "./assests/img/Featureds/01-featured.jpg",
       time: "04:19",
     },
     {
       name: "Ngày mai em đi mất",
       singer: "Khải Đăng x Đạt G",
       path: "./assests/music/2.mp3",
-      image: "./assests/img/Categorys/02-category.jpg",
+      image: "./assests/img/Featureds/02-featured.jpg",
       time: "04:08",
     },
     {
       name: "Nơi ta sống",
       singer: "Long nón lá x Mikelodic",
       path: "./assests/music/3.mp3",
-      image: "./assests/img/Categorys/03-category.jpg",
+      image: "./assests/img/Featureds/03-featured.jpg",
       time: "02:54",
     },
     {
       name: "Mùa hè tuyệt vời",
       singer: "Đức Phúc",
       path: "./assests/music/4.mp3",
-      image: "./assests/img/Categorys/04-category.jpg",
+      image: "./assests/img/Featureds/04-featured.jpg",
       time: "03:32",
     },
     {
       name: "Cô đơn trên SOFA",
       singer: "Trung Quân cover",
       path: "./assests/music/5.mp3",
-      image: "./assests/img/Categorys/05-category.jpg",
+      image: "./assests/img/Featureds/05-featured.jpg",
       time: "04:43",
     },
     {
       name: "Anh là ai?",
       singer: "Huỳnh Công Hiếu x DT",
       path: "./assests/music/6.mp3",
-      image: "./assests/img/Categorys/06-category.jpg",
+      image: "./assests/img/Categorys/01-category.jpg",
       time: "04:36",
     },
     {
       name: "À lôi",
       singer: "Double2T x Masew",
       path: "./assests/music/7.mp3",
-      image:"./assests/img/Categorys/07-category.jpg",
+      image:"./assests/img/Categorys/01-category.jpg",
       time: "03:12",
     },
     {
       name: "Faded",
       singer: "Alan Walker",
       path: "./assests/music/8.mp3",
-      image: "./assests/img/Categorys/08-category.jpg",
+      image: "./assests/img/Categorys/01-category.jpg",
       time: "03:33",
     },
     {
       name: "Cao ốc 20",
       singer: "Bray x Đạt G",
       path: "./assests/music/9.mp3",
-      image: "./assests/img/Categorys/06-category.jpg",
+      image: "./assests/img/Categorys/01-category.jpg",
       time: "04:14",
     },
     {
       name: "Making my way",
       singer: "Sơn Tùng",
       path: "./assests/music/10.mp3",
-      image: "./assests/img/Categorys/06-category.jpg",
+      image: "./assests/img/Categorys/01-category.jpg",
       time: "04:18",
     },
     {
       name: "Nắng ấm ngang qua",
       singer: "Sơn Tùng",
       path: "./assests/music/11.mp3",
-      image: "./assests/img/Categorys/06-category.jpg",
+      image: "./assests/img/Categorys/01-category.jpg",
       time: "03:15",
     },
     {
       name: "Thị mầu",
       singer: "Hòa Minzy x Masew",
       path: "./assests/music/12.mp3",
-      image: "./assests/img/Categorys/06-category.jpg",
+      image: "./assests/img/Categorys/01-category.jpg",
       time: "03:21",
     }
   ],
@@ -178,6 +178,12 @@ const app = {
     const _this = this;
     const cdWidth = cd.offsetWidth;
     iconMin.style.display = "none";
+    // Xử lý CD quay / dừng
+    const cdThumbAnimate = musicImg.animate([{ transform: "rotate(360deg)" }], {
+      duration: 10000, // 10 seconds
+      iterations: Infinity
+    });
+    cdThumbAnimate.pause();
     // Xử lý khi click play
     playBtn.onclick = function () {
       if (_this.isPlaying) {
@@ -190,11 +196,13 @@ const app = {
     audio.onplay = function () {
       _this.isPlaying = true;
       player.classList.add("playing");
+      cdThumbAnimate.play();
     };
     // Khi song bị pause
     audio.onpause = function () {
       _this.isPlaying = false;
       player.classList.remove("playing");
+      cdThumbAnimate.pause();
     };
     // Khi tiến độ bài hát thay đổi
     audio.ontimeupdate = function () {
@@ -313,11 +321,15 @@ const app = {
       const searchTerm = searchInput.value.toLowerCase();
       const matchedSongIndexes = _this.songs.reduce((indexes, song, index) => {
         if (song.name.toLowerCase().includes(searchTerm) || song.singer.toLowerCase().includes(searchTerm)) {
-            indexes.push(index);
-          }
+          indexes.push(index);
+        }
         return indexes;
       }, []);
+    
+      const searchResultsHeight = matchedSongIndexes.length <= 2 ? '20vh' : '35vh';
+    
       if (matchedSongIndexes.length > 0) {
+        searchResultsContainer.style.height = searchResultsHeight;
         searchResultsContainer.innerHTML = ""; // Xóa kết quả tìm kiếm trước đó
         searchResultsContainer.innerHTML = `
           <div class="search-info">
@@ -351,11 +363,10 @@ const app = {
           });
           searchResultsContainer.appendChild(songElement);
         });
-      };
+      } else {
+        searchResultsContainer.style.height = '0'; // Đặt chiều cao về 0 nếu không có kết quả
+      }
     };
-    
-
-
   },
   scrollToActiveSong: function () {
     setTimeout(() => {
@@ -399,11 +410,9 @@ const app = {
     this.currentIndex = newIndex;
     this.loadCurrentSong();
   },
-  
   start: function () {
     // Gán cấu hình từ config vào ứng dụng
     this.loadConfig();
-
     // Định nghĩa các thuộc tính cho object
     this.defineProperties();
 
@@ -424,13 +433,3 @@ const app = {
 app.start();
 
 
-
-$(document).ready(function() {
-  $(window).scroll(function() { 
-      if($(this).scrollTop()) {
-          $('#go-to-top').fadeIn();
-      } else {
-          $('#go-to-top').fadeOut();
-      }
-  });
-});
