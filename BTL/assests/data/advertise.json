@@ -1,22 +1,29 @@
 [{
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }, {
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }, {
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }, {
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }, {
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }, {
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }, {
     "image" : "./assests/img/Advertise/01.png",
-    "link" : "http://ou.edu.vn/"
+    "link" : "http://ou.edu.vn/",
+    "name" : "OU"
 }]

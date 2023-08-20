@@ -65,7 +65,7 @@ ul.menu > li:hover > button,
 
 ul.menu > li:hover > a,
 #next:hover, #prev:hover,
-.container > ul > li:hover > h2,
+.container > ul > li > div > div:hover,
 .container > ul > li > div > a:hover {
     color: var(--whitenew);
     transition: color 0.5s;
@@ -916,9 +916,6 @@ html {
     display: none;
 }
 
-.ads {
-    height: 34vh;
-}
 
 .ads > ul > li > div > div > a > img {
     background-color: var(--violet);

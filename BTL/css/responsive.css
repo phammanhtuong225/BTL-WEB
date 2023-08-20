@@ -19,9 +19,9 @@
         font-size: 0.825em; /* 10px / 16px = 0.625 */
       }
     
-      body {
+    body {
         margin-bottom: 120px;
-      }
+    }
 
     .logo {
         margin: 0;
@@ -34,6 +34,10 @@
 
     .search:hover .search-text {
         width: 10rem;
+    }
+
+    .modal-body {
+        width: 100%;
     }
 
     main {
@@ -207,9 +211,9 @@
         font-size: 1.3em; /* 10px / 16px = 0.625 */
       }
     
-      body {
-        margin-bottom: 120px;
-      }
+    body {
+        margin-bottom: 200px;
+    }
 
     .logo {
         margin: 0;
@@ -340,7 +344,7 @@
     }
 
     #go-to-top {
-        bottom: 130px;
+        bottom: 220px;
     }
 
     .player {
@@ -416,5 +420,17 @@
     .thumb {
         padding-top: 7%;
         width: 7%;
+    }
+
+    .item {
+        left: calc(50% - 100px);
+    }
+
+    .footers {
+        flex-direction: column;
+    }
+
+    .footer-l {
+        padding-bottom: 1rem;
     }
 }

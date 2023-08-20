@@ -29,6 +29,7 @@ const artistName = $("#artist-music");
 const currentURL = window.location.href;
 
 
+
 const app = {
   currentIndex: 0,
   isPlaying: false,
@@ -75,50 +76,13 @@ const app = {
       name: "Anh là ai?",
       singer: "Huỳnh Công Hiếu x DT",
       path: "./assests/music/6.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
-      time: "04:36",
+      image: "./assests/img/Featureds/06-featured.jpg",      time: "04:36",
     },
     {
       name: "À lôi",
       singer: "Double2T x Masew",
       path: "./assests/music/7.mp3",
-      image:"./assests/img/Categorys/01-category.jpg",
-      time: "03:12",
-    },
-    {
-      name: "Faded",
-      singer: "Alan Walker",
-      path: "./assests/music/8.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
-      time: "03:33",
-    },
-    {
-      name: "Cao ốc 20",
-      singer: "Bray x Đạt G",
-      path: "./assests/music/9.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
-      time: "04:14",
-    },
-    {
-      name: "Making my way",
-      singer: "Sơn Tùng",
-      path: "./assests/music/10.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
-      time: "04:18",
-    },
-    {
-      name: "Nắng ấm ngang qua",
-      singer: "Sơn Tùng",
-      path: "./assests/music/11.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
-      time: "03:15",
-    },
-    {
-      name: "Thị mầu",
-      singer: "Hòa Minzy x Masew",
-      path: "./assests/music/12.mp3",
-      image: "./assests/img/Categorys/01-category.jpg",
-      time: "03:21",
+      image: "./assests/img/Featureds/07-featured.jpg",      time: "03:12",
     }
   ],
   setConfig: function (key, value) {
@@ -190,8 +154,7 @@ const app = {
         audio.pause();
       } else {
         audio.play();
-      }
-      
+      }      
     };
     // Khi song được play
     audio.onplay = function () {

@@ -7,9 +7,6 @@ let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 let active = 0;
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   let menuItems = document.querySelectorAll(".menu li");
 
@@ -55,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 function loadAdvertises() {
     fetch("assests/data/advertise.json").then(res => res.json()).then(data => {
         let advertisesList = document.getElementById("advertises");
@@ -70,6 +66,7 @@ function loadAdvertises() {
                     <i class="fa-solid fa-play"></i>
                   </a>    
                 </div>
+                <a>${advertise.name}</a>
               </div>
             </li>
           `;
@@ -125,7 +122,7 @@ function loadArtists() {
           <li>
             <div class="artists">
               <div>
-              <a>
+                <a>
                   <img src="${artist.image}" alt="">
                   <i class="fa-solid fa-play"></i>
                 </a>    
