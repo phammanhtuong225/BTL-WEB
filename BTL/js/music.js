@@ -191,18 +191,22 @@ const app = {
       } else {
         audio.play();
       }
+      
     };
     // Khi song được play
     audio.onplay = function () {
       _this.isPlaying = true;
       player.classList.add("playing");
       cdThumbAnimate.play();
+      localStorage.setItem("currentSongIndex", _this.currentIndex);
+      localStorage.setItem("isPlaying", true);
     };
     // Khi song bị pause
     audio.onpause = function () {
       _this.isPlaying = false;
       player.classList.remove("playing");
       cdThumbAnimate.pause();
+      localStorage.setItem("isPlaying", false);
     };
     // Khi tiến độ bài hát thay đổi
     audio.ontimeupdate = function () {
@@ -367,6 +371,20 @@ const app = {
         searchResultsContainer.style.height = '0'; // Đặt chiều cao về 0 nếu không có kết quả
       }
     };
+    audio.ontimeupdate = function () {
+      if (audio.duration) {
+        const progressPercent = Math.floor(
+          (audio.currentTime / audio.duration) * 100
+        );
+        progress.value = progressPercent;
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        startTime.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        
+        // Lưu thời gian phát hiện tại vào Local Storage
+        localStorage.setItem("currentTime", audio.currentTime);
+      }
+    };    
   },
   scrollToActiveSong: function () {
     setTimeout(() => {
@@ -413,20 +431,28 @@ const app = {
   start: function () {
     // Gán cấu hình từ config vào ứng dụng
     this.loadConfig();
+    
     // Định nghĩa các thuộc tính cho object
     this.defineProperties();
 
     // Lắng nghe / xử lý các sự kiện (DOM events)
     this.handleEvents();
-
+    // Khôi phục trạng thái từ Local Storage
+    this.currentIndex = parseInt(localStorage.getItem("currentSongIndex")) || 0;
+    this.isPlaying = localStorage.getItem("isPlaying") === "true";
+    const currentTime = parseFloat(localStorage.getItem("currentTime")) || 0;
+    audio.currentTime = currentTime;
     // Tải thông tin bài hát đầu tiên vào UI khi chạy ứng dụng
     this.loadCurrentSong();
-
+ 
     // Render playlist
     if (currentURL.includes("rank.html")) {
       this.renderRank();
     } else {
       this.render();
+    }
+    if (this.isPlaying) {
+      audio.play();
     }
   },
 };
